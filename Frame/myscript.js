@@ -1,7 +1,7 @@
 const scroll_speed = 600; //スクロールスピード
 
 jQuery(function ($) {
-   
+
    var pagetop = $('#page-top');
    $('body').toggleClass('visible'); //フェードイン！
    // ボタン非表示
@@ -10,17 +10,17 @@ jQuery(function ($) {
       $('body, html').animate({ scrollTop: 0 }, scroll_speed);
       return false;
    });
-	
+
   //ハンバーガーメニューの開閉
 	$('.hamburger').click(function() {
         $(this).toggleClass('active');
 
         if ($(this).hasClass('active')) {
             $('.mytheme-nav').addClass('active');
-           
+
         } else {
             $('.mytheme-nav').removeClass('active');
- 
+
         }
     });
 
@@ -39,8 +39,8 @@ jQuery(function ($) {
             //$('.nav-brand-sp-hidden').removeClass('active');
         }
     });
-	
-  
+
+
 
 //window resize function start*/
 /*
@@ -58,7 +58,7 @@ $(window).scroll(function () {
            pagetop.fadeIn();
       } else {
            pagetop.fadeOut();
-      }	
+      }
 });
 /* window scroll function end*/
 

@@ -5,16 +5,16 @@ wp.domReady(function () {
     name: 'my50vh',
     label: '高さをアレンジ'
   });
-	
+
   //テーブルブロック:.is-style-nameをcssで設定する
   wp.blocks.registerBlockStyle('core/table', {
     name: 'horizontal-border',
-    label: '水平ボーダースタイル'
+    label: '水平ボーダースタイル'
   });
-	
+
  //テーブルブロック:.is-style-nameをcssで設定する
   wp.blocks.registerBlockStyle('core/heading', {
     name: 'vertical-text',
-    label: '縦書きスタイル'
+    label: '縦書きスタイル'
   });
 });

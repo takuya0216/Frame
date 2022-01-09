@@ -47,7 +47,6 @@ body {
   right: calc(var(--side2) + var(--side));
 }
 
-
 /*news*/
 .wp-block-group.lp-news-inner {
   margin-right: calc(50% - 50vw);

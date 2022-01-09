@@ -89,13 +89,12 @@
   padding: 0;
 }
 
-
 /*NEWS*/
 .stk-container-padding {
   padding: 25px;
 }
-.lp-news .stk-block-heading__text{
-	margin-top: 0;
+.lp-news .stk-block-heading__text {
+  margin-top: 0;
 }
 
 .lp-news-vhead {
@@ -108,11 +107,11 @@
 
 .wp-block-query.lp-news-posts ul {
   margin: 0;
- justify-content: space-around;
+  justify-content: space-around;
 }
 .wp-block-query.lp-news-posts ul li {
-    display: flex;
-	margin-top:20px;
+  display: flex;
+  margin-top: 20px;
 }
 .wp-block-query.lp-news-posts h2 {
   margin: 15px 0;
@@ -125,41 +124,41 @@
   margin-right: 15px;
 }
 .wp-block-query.lp-news-posts figure a {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 .wp-block-query.lp-news-posts figure img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
-@media (min-width: 600px) and (max-width: 768px){
-.wp-block-post-template.is-flex-container li, .wp-block-query-loop.is-flex-container li {
-    margin-right: 0; 
-}
-.wp-block-post-template.is-flex-container.is-flex-container.columns-2>li, .wp-block-query-loop.is-flex-container.is-flex-container.columns-2>li {
+@media (min-width: 600px) and (max-width: 768px) {
+  .wp-block-post-template.is-flex-container li,
+  .wp-block-query-loop.is-flex-container li {
+    margin-right: 0;
+  }
+  .wp-block-post-template.is-flex-container.is-flex-container.columns-2 > li,
+  .wp-block-query-loop.is-flex-container.is-flex-container.columns-2 > li {
     width: 100%;
-}
-}
-	
-.wp-block-post-template.is-flex-container li, .wp-block-query-loop.is-flex-container li {
-    margin: 0 0 0 0;
-	
-}
-@media (max-width: 768px){
-.wp-block-query.lp-news-posts figure {
-  aspect-ratio: 21 / 16;
- 
-}
-}
-@media (min-width: 768px){
-.wp-block-query.lp-news-posts {
-  margin-left: 110px;
-}
-.wp-block-query.lp-news-posts figure {
-  width: 210px;
-  height: 160px;
-  margin-right: 25px;
-}
+  }
 }
 
+.wp-block-post-template.is-flex-container li,
+.wp-block-query-loop.is-flex-container li {
+  margin: 0 0 0 0;
+}
+@media (max-width: 768px) {
+  .wp-block-query.lp-news-posts figure {
+    aspect-ratio: 21 / 16;
+  }
+}
+@media (min-width: 768px) {
+  .wp-block-query.lp-news-posts {
+    margin-left: 110px;
+  }
+  .wp-block-query.lp-news-posts figure {
+    width: 210px;
+    height: 160px;
+    margin-right: 25px;
+  }
+}

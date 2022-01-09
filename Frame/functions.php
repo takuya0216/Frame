@@ -312,6 +312,18 @@ function save_default_thumbnail( $post_id ) {
     }
   }
 }
+/*ショートコード*/
+/*ショートコードを使ったphpファイルの呼び出し方法*/
+function Include_my_php($params = array()) {
+    extract(shortcode_atts(array(
+        'file' => 'default'
+    ), $params));
+    ob_start();
+    include(get_theme_root() . '/' . get_template() . "/$file.php");
+    return ob_get_clean();
+}
+add_shortcode('include_myphp', 'Include_my_php');
+
 /* テーマカスタマイザー
 ---------------------------------------------------------- */
 add_action( 'customize_register', 'theme_customize' );

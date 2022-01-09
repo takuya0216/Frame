@@ -19,8 +19,8 @@
 <?php wp_body_open(); ?>
 <header class="mytheme-header">
   <figure class="header-logo">
-	  <?php $logo_url = get_the_logo_url('logo_url'); ?> 
-	  <?php if($logo_url): ?> 
+	  <?php $logo_url = get_the_logo_url('logo_url'); ?>
+	  <?php if($logo_url): ?>
 	  	<a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo get_the_logo_url(); ?>" alt="<?php bloginfo('name'); ?>" /></a>
 	  <?php else: ?>
 	    <a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>

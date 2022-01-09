@@ -27,7 +27,9 @@ echo $reuse_block_content;
   </article>
 
   <?php endwhile; endif; ?>
-  <?php the_post_navigation(); ?>
+  <?php the_post_navigation(array(
+    'prev_text' => '<span class="my-prev-next my-pagi-prev">PREVIOUS</span>',
+    'next_text' => '<span class="my-prev-next my-pagi-next">NEXT</span>',)); ?>
 </main>
 
 <?php get_sidebar(); ?>

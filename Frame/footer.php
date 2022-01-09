@@ -12,8 +12,8 @@
   <?php endif; ?>
     <section class="footer-links">
       <div class="footer-logo">
-		  <?php $footer_logo_url = get_the_logo_url('footer_logo_url'); ?> 
-	      <?php if($footer_logo_url): ?> 
+		  <?php $footer_logo_url = get_the_logo_url('footer_logo_url'); ?>
+	      <?php if($footer_logo_url): ?>
 	  	    <a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo get_the_footer_logo_url(); ?>" alt="<?php bloginfo('name'); ?>" /></a>
 	      <?php else: ?>
 	        <a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
