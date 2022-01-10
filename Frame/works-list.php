@@ -2,20 +2,25 @@
 <?php
      global $post;
      $paged = get_query_var('paged') ?: 1; //ページネーションを使いたいなら指定
+     $works_post_per_page = 9;
      $args = array(
       'paged' => $paged, //ページネーションを使いたいなら指定
-      'posts_per_page' => 9, //9記事のみ出力
+      'posts_per_page' => $works_post_per_page,
       'post_status' => 'publish', //公開の記事だけ
       'post_type' => 'post-work', //カスタム投稿slag
       'orderby' => 'date', //日付を出力する基準
       'order' => 'DESC' //表示する順番（逆はASC）
 
       );
-      $myposts = get_posts( $args );
-      if($myposts ) : foreach( $myposts  as $post ) : setup_postdata($post);
+      $the_query = new WP_Query( $args );
+      if ( $the_query->have_posts() ) :
+?>
 
-      //--------ここから繰り返し----------
-      ?>
+     <?php global $previousday; //この表記と$previousday = '';で同じ日付の投稿でも表示される
+       while ( $the_query->have_posts() ) : $the_query->the_post();
+       $previousday = '';
+     //-------- ここから繰り返し----------
+     ?>
         <article <?php post_class(); ?>>
         <!--<a href="<?php the_permalink(); ?>">-->
         <?php if(has_post_thumbnail()): ?>
@@ -44,7 +49,7 @@
         <!--</a>-->
         </article>
 
-      <?php endforeach; //------------繰り返しここまで----------
+      <?php endwhile; //------------繰り返しここまで----------
       ?>
 
       <?php else : //記事が無い場合
@@ -57,3 +62,31 @@
              wp_reset_postdata();
       endif; ?>
 </div>
+<nav class="navigation pagination" role="navigation" aria-label="Works">
+		<h2 class="screen-reader-text">Worksナビゲーション</h2>
+		<div class="nav-links">
+<?php
+  global $wp_rewrite;
+  $paginate_base = get_pagenum_link(1);
+  if(strpos($paginate_base, '?') || ! $wp_rewrite->using_permalinks()){
+  $paginate_format = '';
+  $paginate_base = add_query_arg('paged','%#%');
+  }
+  else{
+  $paginate_format = (substr($paginate_base,-1,1) == '/' ? '' : '/') .
+  user_trailingslashit('page/%#%/','paged');;
+  $paginate_base .= '%_%';
+  }
+  echo paginate_links(array(
+  'base' => $paginate_base,
+  'format' => $paginate_format,
+  'total' => $the_query->max_num_pages,
+  'mid_size' => 1, //カレントページの前後
+  'end_size' => 1,
+  'current' => ($paged ? $paged : 1),
+  'prev_text' => '<span class="my-prev-next my-pagi-prev"><i class="fas fa-angle-left"></i>PREVIOUS</span>',
+  'next_text' => '<span class="my-prev-next my-pagi-next">NEXT<i class="fas fa-angle-right"></i></span>',
+  ));
+?>
+  </div>
+</nav>

@@ -30,7 +30,8 @@
   <?php endwhile; endif; ?>
   </div>
   <?php the_posts_pagination(array(
-    'mid_size' => '3',
+    'mid_size' => 1, //カレントページの前後
+    'end_size' => 1,
     'prev_next' => true,
     'prev_text' => '<span class="my-prev-next my-pagi-prev"><i class="fas fa-angle-left"></i>PREV</span>',
     'next_text' => '<span class="my-prev-next my-pagi-next">NEXT<i class="fas fa-angle-right"></i></span>',)); ?>

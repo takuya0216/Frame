@@ -541,7 +541,7 @@ body::after {
 .post-navigation .nav-next {
   grid-column: 2;
 }
-
+/*
 .post-navigation .nav-previous a::before {
   content: "\f104";
   font-family: "Font Awesome 5 Free";
@@ -555,7 +555,7 @@ body::after {
   font-weight: bold;
   color: #444444;
 }
-
+*/
 .post-navigation .nav-previous a,
 .post-navigation .nav-next a {
   display: grid;
@@ -706,7 +706,7 @@ body::after {
   font-size: 13px;
 }
 
-.pagination .nav-links a {
+.pagination .nav-links .current {
   color: var(--primary-color);
 }
 
@@ -716,12 +716,12 @@ body::after {
   letter-spacing: 4px;
 }
 
-.my-pagi-next svg {
-  margin-left: 10px;
+.my-pagi-next i {
+  margin-left: 4px;
 }
 
-.my-pagi-prev svg {
-  margin-right: 10px;
+.my-pagi-prev i {
+  margin-right: 4px;
 }
 
 /*カテゴリー＆月別ページ*/
@@ -1018,11 +1018,7 @@ div#wpcf7cpcnf {
     grid-column: 3 / -3;
     min-width: 0;
   }
-  /*基本*/
-  article.post h2 {
-    font-size: 26px;
-    margin-bottom: 73px;
-  }
+
   /* 幅広・全幅 */
   .alignwide {
     grid-column: 2 / -2;
@@ -1102,14 +1098,11 @@ div#wpcf7cpcnf {
   .postlist {
     --imgh: 430px;
     --colgap: 48px;
-  }
-
-  .postlist h1 {
-    font-size: var(--f1);
-  }
-  .postlist {
     grid-column: 3 / -3;
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  .postlist h1 {
+    font-size: var(--f1);
   }
   .postlist figure {
     margin: 0 0 28px 0;
@@ -1128,17 +1121,15 @@ div#wpcf7cpcnf {
   .works-postlist h2 {
     font-size: 15px;
   }
-
   /*ページネーション*/
   .pagination {
-    margin-top: 162px;
+    margin-top: 80px;
   }
   .pagination .nav-links {
     grid-column-gap: 48px;
     column-gap: 48px;
     color: #000000;
   }
-
   .contact-content {
     justify-content: space-between;
     flex-direction: row;
@@ -1192,7 +1183,8 @@ div#wpcf7cpcnf {
   }
   /*投稿ページ*/
   .single-post-title {
-    font-size: 30px;
+    font-size: 26px;
+    margin-bottom: 73px;
   }
   /*投稿ページのコンテンツ上マージン*/
   .post-navigation .nav-links {
