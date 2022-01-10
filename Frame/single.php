@@ -27,10 +27,8 @@ echo $reuse_block_content;
   </article>
 
   <?php endwhile; endif; ?>
-  <?php the_posts_pagination(array(
-    'mid_size' => '3',
-    'prev_next' => true,
-    'prev_text' => '<span class="my-prev-next my-pagi-prev"><i class="fas fa-angle-left"></i>PREVIOUS</span>',
+  <?php the_post_navigation(array(
+   'prev_text' => '<span class="my-prev-next my-pagi-prev"><i class="fas fa-angle-left"></i>PREVIOUS</span>',
     'next_text' => '<span class="my-prev-next my-pagi-next">NEXT<i class="fas fa-angle-right"></i></span>',)); ?>
 </main>
 
