@@ -11,15 +11,29 @@ jQuery(function ($) {
       return false;
    });
 
-  //ハンバーガーメニューの開閉
+   //ハンバーガーのホバー
+    $('.hamburger').hover(
+        //ホバーした
+        function () {
+            $(this).addClass('hover');
+        },
+        //離れた
+        function () {
+            $(this).removeClass('hover');
+        },
+    );
+
+   //ハンバーガーメニューの開閉
 	$('.hamburger').click(function() {
         $(this).toggleClass('active');
 
         if ($(this).hasClass('active')) {
             $('.mytheme-nav').addClass('active');
+			 $(this).addClass('hover');
 
         } else {
             $('.mytheme-nav').removeClass('active');
+			$(this).removeClass('hover');
 
         }
     });

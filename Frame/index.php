@@ -11,11 +11,11 @@
     <article <?php post_class(); ?>>
     <a href="<?php the_permalink(); ?>">
     <?php if(has_post_thumbnail()): ?>
-      <figure>
+      <figure class="scale-up-img">
       <?php the_post_thumbnail(); ?>
       </figure>
     <?php else: ?>
-      <figure>
+      <figure class="scale-up-img">
         <img src="<?php echo get_template_directory_uri(); ?>/screenshot.png" alt="" width="1200" height="900">
       </figure>
     <?php endif; ?>

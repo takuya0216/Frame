@@ -358,6 +358,61 @@ function theme_customize($wp_customize){
 			'settings' => 'footer_logo_url', //セッティングID
 			'description' => 'フッターロゴ画像を設定してください。<br>推奨サイズ：170x89px', //セッティングの説明
 		)));
+
+  //フッター設定
+  $wp_customize->add_section( 'my_footer_info', array ( //ID
+    'title' => 'フッター情報設定', //表示名
+    'priority' => 79,
+  ));
+
+  //youtube
+	$wp_customize->add_setting(
+		'my_footer_options[footer_youtube]', // テーマ設定を識別する「テーマ設定ID」を指定
+		array(
+			'default'     => '#', // デフォルト値を設定
+      'type'        => 'option', //option:データベースに保存 デフォルト：theme_mod
+      'transport'   => 'refresh', //ライブプレビューON（OFF：postMessage)
+		)
+	);
+  //instagram
+	$wp_customize->add_setting(
+		'my_footer_options[footer_instagram]', // テーマ設定を識別する「テーマ設定ID」を指定
+		array(
+			'default'     => '#', // デフォルト値を設定
+      'type'        => 'option',
+      'transport'   => 'refresh', //ライブプレビューON（OFF：postMessage)
+		)
+	);
+  //電話番号
+	$wp_customize->add_setting(
+		'my_footer_options[footer_tell]', // テーマ設定を識別する「テーマ設定ID」を指定
+		array(
+			'default'     => '0565-26-0606', // デフォルト値を設定
+      'type'        => 'option',
+      'transport'   => 'refresh', //ライブプレビューON（OFF：postMessage)
+		)
+	);
+  // コントロール：youtube
+  $wp_customize->add_control( 'footer_youtube_control', array(
+    'settings'  => 'my_footer_options[footer_youtube]',
+    'label'     => 'youtubeURL',
+    'section'   => 'my_footer_info',
+    'type'      => 'text',
+  ));
+  // コントロール：instagram
+  $wp_customize->add_control( 'footer_instagram_control', array(
+    'settings'  => 'my_footer_options[footer_instagram]',
+    'label'     => 'instagramURL',
+    'section'   => 'my_footer_info',
+    'type'      => 'text',
+  ));
+  // コントロール：電話番号
+  $wp_customize->add_control( 'footer_tell_control', array(
+    'settings'  => 'my_footer_options[footer_tell]',
+    'label'     => '電話番号',
+    'section'   => 'my_footer_info',
+    'type'      => 'text',
+  ));
 }
 
 /* テーマカスタマイザーで設定された画像のURLを取得

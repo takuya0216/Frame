@@ -39,6 +39,7 @@ body *::after {
 
 figure {
   margin: 0;
+  overflow: hidden;
 }
 
 .mytheme-article .mytheme-main:first-child {
@@ -156,8 +157,8 @@ body > * {
 .hamburger span {
   display: block;
   position: absolute; /* .hamburgerに対して */
-  width: 35.5px;
-  left: 13.25px;
+  width: 35px;
+  left: 13.5px;
   height: 1px;
   background-color: #323232;
   transition: 0.3s ease-in-out;
@@ -165,20 +166,20 @@ body > * {
 }
 
 .hamburger span:nth-child(1) {
-  left: 23.25px;
-  width: 22px;
-  top: 19.5px;
+  left: 23.5px;
+  width: 21px;
+  top: 17.5px;
 }
 
 .hamburger span:nth-child(2) {
-  width: 22px;
-  top: 26.5px;
+  width: 21px;
+  top: 24.5px;
 }
 
 .hamburger span:nth-child(3) {
-  left: 23.25px;
-  width: 22px;
-  top: 32.5px;
+  left: 23.5px;
+  width: 21px;
+  top: 31.5px;
 }
 
 .hamburger span:nth-child(4) {
@@ -189,19 +190,23 @@ body > * {
   height: 20px;
   top: 40px;
 }
-
+.hamburger.hover span:nth-child(1),
+.hamburger.hover span:nth-child(2),
+.hamburger.hover span:nth-child(3) {
+  left: 20.5px;
+}
 .hamburger.active span:nth-child(1) {
-  left: 13.25px;
-  width: 34.8px;
+  left: 20.5px;
+  width: 21px;
   top: 25.5px;
-  transform: rotate(15.7deg);
+  transform: rotate(-30deg);
 }
 
 .hamburger.active span:nth-child(3) {
-  left: 13.25px;
-  width: 34.8px;
+  left: 20.5px;
+  width: 21px;
   top: 25.5px;
-  transform: rotate(-15.7deg);
+  transform: rotate(30deg);
 }
 .hamburger.active span:nth-child(2) {
   opacity: 0;
@@ -437,6 +442,10 @@ body::after {
 
 .footer-sns .footer-sns-icon {
   font-size: 29px;
+  transition: transform 0.1s ease;
+}
+.footer-sns .footer-sns-icon:hover {
+  transform: scale(1.1);
 }
 
 .footer-copyright {
@@ -541,6 +550,7 @@ body::after {
 .post-navigation .nav-next {
   grid-column: 2;
 }
+
 /*
 .post-navigation .nav-previous a::before {
   content: "\f104";
@@ -713,7 +723,7 @@ body::after {
 .my-prev-next {
   border: 1px solid #231815;
   padding: 15px 20px 10px 19px;
-  letter-spacing: 4px;
+  letter-spacing: 1px;
 }
 
 .my-pagi-next i {
@@ -1004,6 +1014,16 @@ div#wpcf7cpcnf {
 .wp-block-columns {
   margin-bottom: 0;
 }
+/*animation*/
+figure.wp-block-post-featured-image img,
+figure.scale-up-img img {
+  transition: all 200ms ease;
+}
+figure.wp-block-post-featured-image:hover img,
+figure.scale-up-img:hover img {
+  transform: scale(1.1);
+}
+
 /* PC版 */
 @media (min-width: 768px) {
   /*グリッド*/
@@ -1057,7 +1077,11 @@ div#wpcf7cpcnf {
     width: 32px;
     top: 62px;
   }
-
+  .hamburger.hover span:nth-child(1),
+  .hamburger.hover span:nth-child(2),
+  .hamburger.hover span:nth-child(3) {
+    left: 46px;
+  }
   .hamburger span:nth-child(4) {
     background-color: rgba(0, 0, 0, 0);
     color: #000000;
@@ -1068,18 +1092,18 @@ div#wpcf7cpcnf {
 
   /* 最初のspanをマイナス45度に */
   .hamburger.active span:nth-child(1) {
-    left: 37.5px;
-    width: 49px;
+    left: 46px;
+    width: 32px;
     top: 52px;
-    transform: rotate(24deg);
+    transform: rotate(-32deg);
   }
 
   /* 2番目と3番目のspanを45度に */
   .hamburger.active span:nth-child(3) {
-    left: 37.5px;
-    width: 49px;
+    left: 46px;
+    width: 32px;
     top: 52px;
-    transform: rotate(-24deg);
+    transform: rotate(32deg);
   }
   .hamburger-top {
     margin-right: 0;
@@ -1095,14 +1119,14 @@ div#wpcf7cpcnf {
     column-gap: 40px;
   }
   /*記事一覧*/
+  .postlist h1 {
+    font-size: var(--f1);
+  }
   .postlist {
     --imgh: 430px;
     --colgap: 48px;
     grid-column: 3 / -3;
     grid-template-columns: 1fr 1fr 1fr;
-  }
-  .postlist h1 {
-    font-size: var(--f1);
   }
   .postlist figure {
     margin: 0 0 28px 0;
@@ -1129,6 +1153,9 @@ div#wpcf7cpcnf {
     grid-column-gap: 48px;
     column-gap: 48px;
     color: #000000;
+  }
+  .my-prev-next {
+    letter-spacing: 4px;
   }
   .contact-content {
     justify-content: space-between;
@@ -1185,6 +1212,7 @@ div#wpcf7cpcnf {
   .single-post-title {
     font-size: 26px;
     margin-bottom: 73px;
+    margin-top: 0px;
   }
   /*投稿ページのコンテンツ上マージン*/
   .post-navigation .nav-links {
