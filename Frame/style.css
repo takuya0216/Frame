@@ -22,6 +22,28 @@
   --text-color: #231815;
 }
 
+/* 文字色 */
+.has-primary-color {
+  color: var(--primary-color);
+}
+.has-secondary-color {
+  color: var(--secondary-color);
+}
+.has-text-color {
+  color: var(--text-color);
+}
+
+/* 背景色 */
+.has-primary-background-color {
+  background-color: var(--primary-color);
+}
+.has-secondary-background-color {
+  background-color: var(--secondary-color);
+}
+.has-text-background-color {
+  background-color: var(--text-color);
+}
+
 /* 基本 */
 body {
   font-family: quasimoda, "Montserrat", "中ゴシックBBB", "Gothic Medium BBB",
@@ -67,9 +89,30 @@ a:hover {
 }
 
 ul {
-  list-style: none;
+  padding: 0;
+}
+li {
+  margin: 5px 0 5px 15px;
+  padding: 0;
+}
+table td {
+  padding: 13px 0px;
+}
+table th {
+  padding: 13px 13px 13px 0px;
 }
 
+/*WPブロック*/
+.wp-block-columns {
+  margin-bottom: 0;
+}
+.wp-block-media-text {
+  margin-bottom: 30px;
+}
+.wp-block-separator {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 /* Fading Effect - invisible state - */
 .fading-box {
   opacity: 0;
@@ -242,6 +285,7 @@ body > * {
   font-size: var(--f4);
   width: 100%;
   padding: 60px 25px;
+  list-style: none;
 }
 .nav-menu .nav-item {
   padding: 25px 0;
@@ -306,39 +350,55 @@ p {
   line-height: 1.8;
 }
 
-/*サイドメニュー*/
-.mytheme-aside {
-  display: grid;
-  grid-column: 1 / -1;
-  grid-row: aside;
-  grid-row-gap: 30px;
-  row-gap: 30px;
-  background-color: #1b5e92;
-  padding: 60px var(--side);
-  margin-bottom: calc(var(--grid_row_gap) * -1);
+/*ウィジェット*/
+.widget {
+  margin: 50px 0;
 }
-
-.mytheme-aside section h2 {
-  border-bottom: solid 2px #dddddd;
-  padding-bottom: 20px;
-  margin-bottom: 30px;
-  font-size: var(--f4);
-  font-weight: normal;
-  color: #ffffff;
-  text-align: left;
-}
-
-.mytheme-aside a {
-  color: #ffffff;
-}
-
-.mytheme-aside section ul {
-  display: grid;
+.widget ul {
   padding: 0;
-  list-style-type: none;
-  font-size: var(--f6);
-  grid-row-gap: 15px;
-  row-gap: 15px;
+}
+.widget li {
+  margin: 0 0 0 0;
+  padding: 7px 0px 6px 0px;
+  list-style: none;
+  line-height: 160%;
+  border-bottom: 1px dotted var(--secondary-color);
+}
+
+.widgettitle {
+  color: var(--text-color);
+  font-size: var(--f4);
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  font-style: normal;
+  margin: 0px 0px 10px 0px;
+  padding: 0 0 3px 0;
+  border-bottom: 3px solid var(--secondary-color);
+}
+
+.mytheme-searchform .searchfield {
+  color: var(--text-color);
+  width: 85%;
+  padding: 10px 5px;
+}
+.mytheme-searchform .searchsubmit {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  vertical-align: middle;
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+table#wp-calendar {
+  width: 100%;
+}
+table#wp-calendar td {
+  text-align: center;
+}
+table#wp-calendar th {
+  text-align: center;
 }
 
 /*フッター*/
@@ -418,6 +478,9 @@ body::after {
   margin-top: calc(var(--body-after) + 24px);
   gap: 25px;
 }
+.footer-links li {
+  margin: 0;
+}
 
 .footer-nav {
   display: grid;
@@ -430,6 +493,7 @@ body::after {
   padding: 0;
   letter-spacing: 2px;
   font-size: 14px;
+  list-style: none;
 }
 
 .footer-sns {
@@ -438,6 +502,7 @@ body::after {
   padding: 0;
   justify-content: center;
   gap: 30px;
+  list-style: none;
 }
 
 .footer-sns .footer-sns-icon {
@@ -512,6 +577,10 @@ body::after {
   list-style-type: none;
 }
 
+.post-categories li {
+  margin: 0;
+}
+
 .post-categories a {
   padding: 8px 6px;
   /* border-radius: 10px; */
@@ -524,7 +593,7 @@ body::after {
 .mytheme-time {
   display: block;
   text-align: right;
-  color: #444444;
+  margin-bottom: 10px;
 }
 /*記事：前後の記事へのリンク*/
 .post-navigation {
@@ -536,7 +605,7 @@ body::after {
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 30px;
   column-gap: 30px;
-  margin-top: 30px;
+  margin: 30px 0px;
   padding: 20px 0;
   border-top: solid 1px var(--secondary-color);
   border-bottom: solid 1px var(--secondary-color);
@@ -582,6 +651,11 @@ body::after {
 }
 
 /*記事一覧*/
+.postlist-title {
+  font-size: 16px;
+  color: var(--text-color);
+}
+
 .postlist a {
   display: block;
 }
@@ -669,6 +743,10 @@ body::after {
   background-color: var(--primary-color);
 }
 
+.works-postlist-textview ul {
+  list-style: none;
+}
+
 .works-postlist h2 {
   margin: 0;
   padding: 0;
@@ -705,6 +783,7 @@ body::after {
   grid-row: auto;
   justify-self: center;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .pagination .nav-links {
@@ -734,6 +813,26 @@ body::after {
   margin-right: 4px;
 }
 
+/*コメント*/
+li.comment {
+  list-style: none;
+  margin-bottom: 30px;
+}
+.comment-author {
+  margin-bottom: 10px;
+}
+textarea#comment {
+  width: 100%;
+}
+.comment-metadata {
+  font-size: 14px;
+}
+input#submit {
+  font-size: var(--f5);
+  padding: 8px 10px;
+  font-family: quasimoda, "Montserrat", "中ゴシックBBB", "Gothic Medium BBB",
+    "Noto Sans JP", sans-serif;
+}
 /*カテゴリー＆月別ページ*/
 .postlist h1 {
   grid-column: 1/-1;
@@ -1010,10 +1109,6 @@ div#wpcf7cpcnf {
   );
 }
 
-/*カラムブロック*/
-.wp-block-columns {
-  margin-bottom: 0;
-}
 /*animation*/
 figure.wp-block-post-featured-image img,
 figure.scale-up-img img {
@@ -1090,7 +1185,7 @@ figure.scale-up-img:hover img {
     top: 75.5px;
   }
 
-  /* 最初のspanをマイナス45度に */
+  /* 最初のspanをマイナス32度に */
   .hamburger.active span:nth-child(1) {
     left: 46px;
     width: 32px;
@@ -1098,7 +1193,7 @@ figure.scale-up-img:hover img {
     transform: rotate(-32deg);
   }
 
-  /* 2番目と3番目のspanを45度に */
+  /* 2番目と3番目のspanを32度に */
   .hamburger.active span:nth-child(3) {
     left: 46px;
     width: 32px;
@@ -1110,7 +1205,7 @@ figure.scale-up-img:hover img {
   }
 
   .mytheme-main {
-    margin-bottom: 138px;
+    margin-bottom: 90px;
   }
 
   .mytheme-aside {
@@ -1119,6 +1214,10 @@ figure.scale-up-img:hover img {
     column-gap: 40px;
   }
   /*記事一覧*/
+  .postlist-title {
+    font-size: 25px;
+  }
+
   .postlist h1 {
     font-size: var(--f1);
   }
@@ -1190,6 +1289,7 @@ figure.scale-up-img:hover img {
   .footer-sns {
     margin-left: auto;
     gap: 20px;
+    list-style: none;
   }
   .footer-copyright {
     padding-bottom: 63px;
@@ -1216,7 +1316,7 @@ figure.scale-up-img:hover img {
   }
   /*投稿ページのコンテンツ上マージン*/
   .post-navigation .nav-links {
-    margin-top: 50px;
+    margin: 170px 0px 50px 0px;
     padding: 40px 0;
   }
   /*固定ページ*/

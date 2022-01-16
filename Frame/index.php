@@ -1,13 +1,15 @@
 <?php get_header(); ?>
 <main class="mytheme-main mytheme-article">
  <?php
-    // get reusable gutenberg block
-    $reuse_block = get_post( 6408 ); //  123 is ID. reusable block page. ID from the URL.
+    // 再利用ブロック呼び出し
+    $reuse_block = get_post( 6408 ); //投稿一覧ヘッダーブロック
     $reuse_block_content = apply_filters( 'the_content', $reuse_block->post_content);
     echo $reuse_block_content;
   ?>
+  <?php if(have_posts()):?>
+  <!-- 投稿一覧 -->
   <div class="postlist">
-  <?php if(have_posts()): while(have_posts()): the_post(); ?>
+  <?php while(have_posts()): the_post(); ?>
     <article <?php post_class(); ?>>
     <a href="<?php the_permalink(); ?>">
     <?php if(has_post_thumbnail()): ?>
@@ -27,16 +29,21 @@
     </div>
     </a>
     </article>
-  <?php endwhile; endif; ?>
+  <?php endwhile; ?>
   </div>
+  <?php endif; ?>
   <?php the_posts_pagination(array(
     'mid_size' => 1, //カレントページの前後
     'end_size' => 1,
     'prev_next' => true,
     'prev_text' => '<span class="my-prev-next my-pagi-prev"><i class="fas fa-angle-left"></i>PREV</span>',
     'next_text' => '<span class="my-prev-next my-pagi-next">NEXT<i class="fas fa-angle-right"></i></span>',)); ?>
+  <!-- ウィジェットエリア（投稿一覧ページ最下部） -->
+  <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('投稿一覧ページ最下部') ) : ?>
+  <?php endif; ?>
+  <!-- / ウィジェットエリア（投稿一覧ページ最下部） -->
 </main>
 
-<?php get_sidebar(); ?>
+
 
 <?php get_footer(); ?>
