@@ -24,28 +24,65 @@ h1 {
   display: visible;
 }
 
+/*WPブロック*/
+
 .wp-block-image img {
   object-fit: cover;
 }
 .wp-block-image {
   margin: 0 0 30px 0;
 }
-
-.wp-block-page-list ul,
-.wp-block-latest-posts__list ul,
-.wp-block-archives-list ul {
-  padding: 0;
+.wp-block-image figcaption {
+  text-align: unset;
 }
 .wp-block-page-list li,
 .wp-block-latest-posts__list li,
 .wp-block-archives-list li {
-  margin: 0 0 0 0;
-  padding: 7px 0px 6px 0px;
-  list-style: none;
   line-height: 160%;
-  border-bottom: 1px dotted var(--secondary-color);
 }
-
+.wp-block-post-featured-image {
+  margin-bottom: 1.5em;
+}
+.wp-block-pullquote {
+  margin: 0 0 1em;
+  padding: 3em 0;
+  text-align: center;
+  border: none;
+}
+.wp-block-pullquote__citation,
+.wp-block-pullquote cite,
+.wp-block-pullquote footer {
+  font-style: italic;
+}
+blockquote {
+  position: relative;
+  font-style: italic;
+  margin-bottom: 1.5em;
+  padding-left: 1.5em;
+  padding-right: 1em;
+  border-left: 2px solid;
+}
+blockquote cite {
+  font-style: italic;
+}
+blockquote p {
+  margin-bottom: 1em;
+}
+pre {
+  margin-top: 1.65em;
+  font-size: 100%;
+  line-height: 1.5;
+  color: #222222;
+  overflow: auto;
+  margin: 1.65em 0 1.65em 0;
+}
+.wp-block-table td,
+.wp-block-table th {
+  padding: 1.2em;
+}
+.wp-block-calendar table th {
+  color: #444444;
+}
 /*画像ブロックの高さをアレンジ：mystyel.js*/
 .is-style-my50vh img {
   max-height: 50vh;
@@ -103,9 +140,7 @@ h1 {
 .word-break-keep {
   word-break: keep-all;
 }
-.wp-block-media-text .wp-block-media-text__content {
-  padding: 0;
-}
+
 .p-relative {
   position: relative;
 }

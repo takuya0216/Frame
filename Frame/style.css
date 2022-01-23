@@ -110,8 +110,18 @@ table th {
   margin-bottom: 30px;
 }
 .wp-block-separator {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+}
+.wp-block-page-list ul,
+.wp-block-latest-posts__list ul,
+.wp-block-archives-list ul {
+  padding: 0;
+}
+.wp-block-page-list li,
+.wp-block-latest-posts__list li,
+.wp-block-archives-list li {
+  line-height: 160%;
 }
 /* Fading Effect - invisible state - */
 .fading-box {
