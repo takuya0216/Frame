@@ -1,0 +1,254 @@
+/**
+ * フロントとエディタの両方に適応するスタイル
+ */
+
+@charset "UTF-8";
+
+body * {
+  letter-spacing: 0.1em;
+  font-feature-settings: "palt";
+}
+
+/*タイトルフォント*/
+.has-font-anisette {
+  font-family: anisette-std, "Montserrat", "中ゴシックBBB", "Gothic Medium BBB",
+    "Noto Sans JP", sans-serif;
+}
+.has-font-clarendon {
+  font-family: clarendon-urw-extra-wide, sans-serif;
+}
+/*改行禁止*/
+.nowrap {
+  white-space: nowrap !important;
+}
+/*ヘッダーアレンジ 縦書き*/
+.is-style-vertical-text {
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+}
+.page-title-wrapper {
+  background: linear-gradient(var(--color_header_bg) 45%, var(--color_bg) 70%);
+}
+h1.my-page-title {
+  /*固定ページタイトル*/
+  position: relative !important;
+  font-size: 5.1875em !important;
+  font-weight: 400 !important;
+  z-index: 22 !important;
+  letter-spacing: 8px !important;
+  line-height: 0.8em !important;
+  padding-top: 10.875rem !important;
+}
+h2.my-page-subtitle {
+  /*固定ページサブタイトル*/
+  position: relative !important;
+  font-weight: 300 !important;
+  margin-top: 8.8rem !important;
+  margin-bottom: 4.18rem !important;
+  letter-spacing: 0.443em !important;
+}
+.page-text-copy {
+  line-height: 2.1875rem !important;
+  letter-spacing: 0.15625rem !important;
+  font-size: 0.9375rem !important;
+}
+.page-title-wrapper .wp-block-columns {
+  flex-wrap: nowrap !important;
+  --wp--style--block-gap: 0;
+  --wp-column-mt: var(--wp--style--block-gap);
+}
+/*TOPページ*/
+h2.top-company {
+  background-color: rgba(218, 193, 130, 0.5) !important;
+  min-height: 254px !important;
+  max-width: 502px !important;
+  min-width: auto !important;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/*CONCEPT*/
+.concept-col-1 {
+  flex: 1 1 16% !important;
+}
+.concept-col-1 .wp-block-media-text__media img,
+.wp-block-media-text__media video {
+  width: 141px !important;
+}
+.concept-col-2 {
+  flex: 1 1 47% !important;
+  padding-top: 3.65em !important;
+}
+
+.concept-col-3 {
+  flex: 1 1 37% !important;
+}
+h2.concept-title {
+  font-size: 2.125em !important;
+  letter-spacing: 0.3em !important;
+  margin-bottom: 2.9rem;
+}
+p.concept-num {
+  font-size: 5.1875em !important;
+  letter-spacing: 3px !important;
+  font-weight: 300 !important;
+  position: absolute;
+  top: 5px !important;
+  left: 25px !important;
+}
+h2.concept-works-title {
+  font-size: 3.75em !important;
+  letter-spacing: 10px !important;
+  margin: 0 auto;
+  font-weight: 100;
+}
+.concept-works-box .wp-block-cover__inner-container {
+  width: 40%;
+}
+/*COMPANY*/
+h3.company-prof-col-name {
+  font-size: 1.5625rem;
+  margin-bottom: 30px;
+  letter-spacing: 0.3em !important;
+}
+.wp-block-columns.company-prof.has-swl-gray-background-color.has-background {
+  padding: 45px 30px 75px 30px;
+}
+p.company-prof-col-text {
+  font-size: 0.9375rem;
+  line-height: 1.8rem;
+}
+.company-about-table td {
+  padding-left: 0px;
+  padding-top: 1.25em;
+  padding-bottom: 1.5em;
+  font-size: 0.875rem;
+}
+h3.company-about-title {
+  font-size: 1.5625rem;
+  margin-bottom: 30px;
+  letter-spacing: 0.3em !important;
+}
+p.contact-tel-text {
+  font-size: 2.0625rem;
+  margin-bottom: 0px;
+}
+.contact-tel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+  margin-bottom: 135px;
+}
+/* 小さなデバイス  (スマホ, 768pxとそれ以下)*/
+@media (max-width: 768px) {
+  .page-title-wrapper {
+    padding-bottom: 2.5em !important;
+  }
+  h1.my-page-title {
+    /*固定ページタイトル*/
+    font-size: 2.2rem !important;
+    padding-top: 4.075rem !important;
+    letter-spacing: 4px !important;
+  }
+  h2.my-page-subtitle {
+    /*固定ページサブタイトル*/
+    font-size: 1.1rem !important;
+    margin-top: 3.8rem !important;
+    margin-bottom: 1.18rem !important;
+    letter-spacing: 0.1em !important;
+  }
+  p.concept-num {
+    font-size: 3.119rem !important;
+    top: 30px !important;
+    left: 20px !important;
+    letter-spacing: 3px !important;
+    line-height: 1em;
+  }
+  h2.concept-title {
+    font-size: 1.5rem !important;
+    letter-spacing: 0.3rem !important;
+    margin-bottom: 1.9rem;
+    padding-top: 8px !important;
+  }
+
+  .concept-col-wrapper {
+    flex-direction: column !important;
+  }
+  .concept-col-1 .wp-block-media-text__media img,
+  .wp-block-media-text__media video {
+    width: 100px !important;
+  }
+  .concept-col-2 {
+    margin-top: -3.125rem !important;
+    padding-top: 0rem !important;
+    padding-left: 20px;
+    z-index: 100;
+  }
+  h2.concept-works-title {
+    font-size: 2.6em !important;
+  }
+  .concept-works-box .wp-block-cover__inner-container {
+    width: 100%;
+  }
+  .page-text-copy {
+    line-height: 2rem !important;
+  }
+  p.contact-tel-text {
+    font-size: 1.8rem;
+  }
+  .contact-tel {
+    margin-bottom: 80px;
+  }
+}
+
+/* 中間のデバイス(タブレット, 768以上992px以下)*/
+@media (min-width: 768.01px) and (max-width: 992px) {
+  h1.my-page-title {
+    /*固定ページタイトル*/
+    font-size: 3.74rem !important;
+    padding-top: 7.575rem !important;
+  }
+  h2.my-page-subtitle {
+    /*固定ページサブタイトル*/
+    margin-top: 5.8rem !important;
+    margin-bottom: 3.18rem !important;
+    font-size: 1.3rem !important;
+  }
+}
+@media (min-width: 600px) and (max-width: 781px) {
+  .wp-block-column.concept-col-2 {
+    padding-top: 10px !important;
+    padding-left: 0 !important;
+  }
+}
+/*swell対策*/
+/* 600pxより小さいと--swl-fz--root:3.6vwで、レスポンシブにしてる。
+ * htmlのfont-size変更されてemやrem指定のフォントが狙ったサイズにならずスケールしちゃう。
+ * TOPページなど固有デザインを作りたい場合は、以下をページのcssに読み込み。*/
+/*@media (max-width: 600px){
+	html{
+		font-size:16px;
+	}
+}
+*/
+/*Swellのメディアクエリ*/
+@media (min-width: 782px) {
+  .company-prof > .company-prof-col:not(:first-child) {
+    margin-left: 60px !important;
+  }
+  h3.company-prof-col-name {
+    margin-bottom: 50px;
+  }
+  h3.company-about-title {
+    margin-bottom: 80px;
+  }
+  figure.wp-block-table.is-style-simple.company-about-table {
+    margin-bottom: 9.75em !important;
+  }
+}

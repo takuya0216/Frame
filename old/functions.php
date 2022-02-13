@@ -388,7 +388,7 @@ function Include_my_php($params = array()) {
         'file' => 'default'
     ), $params));
     ob_start();
-    include(get_theme_root() . '/' . get_template() . "/$file.php");
+    include(get_stylesheet_directory() . "/$file.php");
     return ob_get_clean();
 }
 add_shortcode('include_myphp', 'Include_my_php');

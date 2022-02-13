@@ -109,3 +109,16 @@ function scroll_effect() {
     }
 
 });
+
+/*指定したpageIdの要素までスクロール*/
+function scrollToPage(pageId) {
+    const root = document.documentElement;
+    var headerH = root.getPropertyValue(--swl-headerH);
+    var y = window.pageYOffset;
+    var element = document.getElementById(pageId);
+    var rect = element.getBoundingClientRect();
+    var position = rect.top + y;
+
+    $("html,body").animate({ scrollTop: position - headerH });
+
+}

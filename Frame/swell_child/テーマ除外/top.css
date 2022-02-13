@@ -1,0 +1,114 @@
+/*TOPページのみのカスタマイズCSS*/
+
+main#main_content {
+  margin-top: calc(var(--m-header_height-pc) * -1);
+}
+
+.l-header {
+  background: transparent;
+}
+.l-header.scroll {
+  background: var(--color_header_bg);
+}
+
+/*スクロールダウン全体の場所*/
+.scrolldown1 {
+  position: absolute;
+  left: 45.31px;
+  top: 97vh;
+  transform: translateY(-100%);
+  height: 50px;
+  cursor: pointer;
+}
+.scrolldown1:hover {
+  opacity: 0.7;
+}
+
+/*Scrollテキストの描写*/
+.scrolldown1 span {
+  /*描画位置*/
+  position: absolute;
+  left: -21px;
+  top: -20px;
+  /*テキストの形状*/
+  color: var(--color_text);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+/* 線の描写 */
+.scrolldown1::after {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  top: 0;
+  /*線の形状*/
+  width: 1px;
+  height: 30px;
+  background: var(--color_text);
+  /*線の動き1.4秒かけて動く。永遠にループ*/
+  animation: pathmove 1.4s ease-in-out infinite;
+  opacity: 0;
+}
+
+/*高さ・位置・透過が変化して線が上から下に動く*/
+@keyframes pathmove {
+  0% {
+    height: 0;
+    top: 0;
+    opacity: 0;
+  }
+  30% {
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    top: 50px;
+    opacity: 0;
+  }
+}
+
+/*TOPロゴ*/
+@media (min-width: 768px) {
+  .l-header__logo {
+    position: sticky;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  .l-header__menuBtn {
+    transform: translateX(calc(var(--m-header_height-pc) / 2));
+  }
+}
+@media (max-width: 1123.99px) {
+  .l-header__menuBtn {
+    transform: translateX(0px);
+  }
+}
+@media (max-width: 959px) {
+  #content {
+    overflow: visible;
+  }
+}
+@media (min-width: 960px) and (max-width: 1095.98px) {
+  .l-header__inner.l-container {
+    padding-left: calc((100vw - var(--container_size, 0px)) / 2);
+    padding-right: calc((100vw - var(--container_size, 0px)) / 2);
+  }
+}
+/* 小さなデバイス  (スマホ, 768pxとそれ以下)*/
+@media (max-width: 767.98px) {
+  .l-header {
+    background: var(--color_header_bg);
+  }
+  main#main_content {
+    margin-top: 0;
+  }
+  .scrolldown1 {
+    top: 73vh;
+    left: 37px;
+  }
+  .scrolldown1 span {
+    left: -18px;
+  }
+}
